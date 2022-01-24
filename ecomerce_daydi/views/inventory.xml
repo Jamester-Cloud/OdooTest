@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="iventory_menu" model="ir.ui.view">
+        <field name="name">inventario</field>
+        <field name="model">inventory.app</field>
+        <field name="arch" type="xml">
+            <form string="">
+                <sheet>
+                    <group>
+                        <field name="imagen" class="rounded img-thumbnail float-left w-50 h-50" widget="image"/>
+                        <field name="cantidad" />
+                        <field name="tipoventa" />
+                        <field name="valor" />
+                        <field name="total" />
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+    
+        
+    <record id="inventory_store_action" model="ir.actions.act_window">
+    	<!-- Nombre del menu-->
+        <field name="name">Nuevo Registro</field>
+        <!-- Tipo de accion-->
+        <field name="type">ir.actions.act_window</field>
+        <!-- Modulo a tomar-->
+        <field name="res_model">inventory.app</field>
+        <!--Tipos de vista-->
+        <field name="view_mode">tree,kanban,form</field>
+        <!--Ayuda en html-->
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Crea un nuevo Registro
+            </p>
+        </field>
+    </record>
+    <!-- Top menu item -->
+    <menuitem id="inventory_root"
+        name="inventory"
+        action="inventory_store_action"
+        sequence="2"/>
+    <menuitem id="inventory_store_root"
+        name="Inventarios"
+        parent="inventory_root"
+        sequence="10"/>
+    <menuitem id="inventory_store"
+        name="lienzos"
+        parent="inventory_store_root"
+        sequence="10"/>
+</odoo>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="group_jugadores" model="res.groups">
+        <field name="name">solo_veran_pjs</field>
+    </record>
+    <record id="group_masters" model="res.groups">
+        <field name="name">veran_todos_los_npjs</field>
+        <field name="implied_ids" eval="[(4,ref('group_jugadores'))]"/>
+    </record>
+</odoo>
