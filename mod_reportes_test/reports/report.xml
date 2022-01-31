@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <report
+        id="inventory_report"
+        string="Inventory report"
+        model="inventory.app"
+        report_type="qweb-pdf"
+        name="inventory_app.report_inventory"
+        file="inventory_app.report_inventory"
+    />
+</odoo>
